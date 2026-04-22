@@ -35,7 +35,7 @@ const OfferLetterForm = () => {
           Your salary will be paid on the last working day of every month, subject to standard statutory deductions.
         </p>
         
-        <div className="overflow-x-auto">
+        <div className="">
           <table className="w-full border-collapse border border-gray-300 my-4 text-sm">
             <thead>
               <tr className="bg-gray-100">
@@ -219,6 +219,7 @@ const OfferLetterForm = () => {
         </div>
       </div>
 
+      <div className="pb-10"></div>
     </div>
   );
 };

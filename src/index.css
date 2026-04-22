@@ -28,9 +28,9 @@
   .pdf-capture-mode {
     background-color: #ffffff !important;
     color: #111827 !important; /* gray-900 hex */
-    width: 210mm !important;
-    min-width: 210mm !important;
-    padding: 12mm !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important;
     margin: 0 !important;
     position: relative !important;
     overflow: visible !important;
