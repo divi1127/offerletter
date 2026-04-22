@@ -146,7 +146,7 @@ const OfferLetterForm = () => {
             <td className="border-none p-0">
               <h3 className="font-bold text-brand mb-1 text-base">11. Termination</h3>
               <p className="mb-2">Either party may terminate this employment agreement by providing 30 days written notice or salary in lieu of notice. However, the company reserves the right to terminate your employment immediately, without notice or compensation, for the following reasons:</p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 list-disc pl-5">
+              <ul className="list-disc pl-5 space-y-1">
                 <li>Misconduct or Policy Violations</li>
                 <li>Poor Performance</li>
                 <li>Submission of Fake Documents</li>
