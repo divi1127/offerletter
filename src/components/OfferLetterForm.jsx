@@ -154,7 +154,7 @@ const OfferLetterForm = () => {
       </div>
 
       {/* 16. Non-Solicitation */}
-      <div className="avoid-break">
+      <div className="avoid-break section-solicitation">
         <h3 className="font-bold text-brand mb-1 text-base">12. Non-Solicitation</h3>
         <p>For a period of six (6) months following the termination of your employment, you shall not attempt to recruit, solicit, or influence other employees or clients to leave the company.</p>
       </div>

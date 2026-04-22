@@ -108,11 +108,11 @@ function App() {
       // Add mobile-specific page breaks ONLY if on a small screen
       const isMobile = window.innerWidth < 768;
       if (isMobile) {
-        const terminationSection = element.querySelector('.section-termination');
-        if (terminationSection) {
+        const solicitationSection = element.querySelector('.section-solicitation');
+        if (solicitationSection) {
           const breakDiv = document.createElement('div');
           breakDiv.className = 'html2pdf__page-break';
-          terminationSection.parentNode.insertBefore(breakDiv, terminationSection);
+          solicitationSection.parentNode.insertBefore(breakDiv, solicitationSection);
         }
       }
 
