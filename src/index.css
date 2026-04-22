@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #0f4d3f;
+  --color-brand-light: #166b57;
+  --color-brand-dark: #0a352a;
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-gray-900 font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* PDF Capture Mode Overrides to fix html2canvas oklch error */
+  .pdf-capture-mode {
+    background-color: #ffffff !important;
+    color: #111827 !important; /* gray-900 hex */
+    width: 210mm !important;
+    min-width: 210mm !important;
+    padding: 20mm !important;
+    margin: 0 !important;
+  }
+
+  .pdf-capture-mode * {
+    /* Force hex colors for all children to avoid oklch parsing errors in html2canvas */
+    border-color: #e5e7eb !important; /* gray-200 hex */
+    outline-color: #e5e7eb !important;
+  }
+
+  .pdf-capture-mode .text-brand,
+  .pdf-capture-mode .text-brand-light {
+    color: #0f4d3f !important;
+  }
+
+  .pdf-capture-mode .text-gray-700 {
+    color: #374151 !important;
+  }
+
+  .pdf-capture-mode .text-gray-600 {
+    color: #4b5563 !important;
+  }
+
+  .pdf-capture-mode .bg-gray-100 {
+    background-color: #f3f4f6 !important;
+  }
+
+  .pdf-capture-mode .bg-gray-50 {
+    background-color: #f9fafb !important;
+  }
+
+  .pdf-capture-mode input,
+  .pdf-capture-mode textarea {
+    @apply border-transparent bg-transparent p-0 text-black shadow-none resize-none overflow-hidden h-auto;
+    color: #000000 !important;
+  }
+
+  .pdf-capture-mode .avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .pdf-capture-mode p, 
+  .pdf-capture-mode ul, 
+  .pdf-capture-mode li,
+  .pdf-capture-mode h3 {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
