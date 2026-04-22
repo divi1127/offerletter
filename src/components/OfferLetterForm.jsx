@@ -2,10 +2,10 @@ import React from 'react';
 
 const OfferLetterForm = () => {
   return (
-    <div className="text-[0.95rem] leading-relaxed text-gray-800 space-y-2">
+    <div className="text-[0.95rem] leading-relaxed text-gray-800 space-y-1.5">
       
       {/* 2. Employee Address Section */}
-      <div className="mb-2 min-h-[70px]"> {/* Reserved space for address to keep bottom alignment consistent */}
+      <div className="mb-1 min-h-[60px]"> {/* Reserved space for address to keep bottom alignment consistent */}
         <p className="font-bold text-gray-900 uppercase text-[10px] mb-1">To,</p>
         <div className="flex flex-col">
           <input type="text" placeholder="[Employee Name]" className="font-bold text-base border border-gray-300 rounded px-2 py-0.5 outline-none focus:border-brand w-full sm:w-64 transition-colors mb-1" />
@@ -177,19 +177,19 @@ const OfferLetterForm = () => {
         <p>This agreement shall be governed by Indian law, and any disputes arising out of this employment shall be handled exclusively in the courts located in Madurai, Tamil Nadu.</p>
       </div>
 
-      {/* 22. Additional Benefits */}
+      {/* 18. Additional Benefits */}
       <div className="avoid-break">
         <h3 className="font-bold text-brand mb-1 text-base">15. Additional Benefits</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mt-2">
-          <label className="flex items-center gap-2 cursor-pointer"><input type="checkbox" defaultChecked className="w-4 h-4 text-brand rounded border-gray-300 focus:ring-brand" /> Performance Bonus</label>
-          <label className="flex items-center gap-2 cursor-pointer"><input type="checkbox" defaultChecked className="w-4 h-4 text-brand rounded border-gray-300 focus:ring-brand" /> Paid Leave</label>
-          <label className="flex items-center gap-2 cursor-pointer"><input type="checkbox" defaultChecked className="w-4 h-4 text-brand rounded border-gray-300 focus:ring-brand" /> Free Lunch/Snacks</label>
-          <label className="flex items-center gap-2 cursor-pointer"><input type="checkbox" defaultChecked className="w-4 h-4 text-brand rounded border-gray-300 focus:ring-brand" /> Health Insurance</label>
-          <label className="flex items-center gap-2 cursor-pointer"><input type="checkbox" className="w-4 h-4 text-brand rounded border-gray-300 focus:ring-brand" /> Accident Insurance</label>
-          <label className="flex items-center gap-2 cursor-pointer"><input type="checkbox" defaultChecked className="w-4 h-4 text-brand rounded border-gray-300 focus:ring-brand" /> Laptop/Work Device</label>
-          <label className="flex items-center gap-2 cursor-pointer"><input type="checkbox" defaultChecked className="w-4 h-4 text-brand rounded border-gray-300 focus:ring-brand" /> Festival Bonus</label>
-          <label className="flex items-center gap-2 cursor-pointer"><input type="checkbox" defaultChecked className="w-4 h-4 text-brand rounded border-gray-300 focus:ring-brand" /> Flexible Hours</label>
-          <label className="flex items-center gap-2 cursor-pointer"><input type="checkbox" className="w-4 h-4 text-brand rounded border-gray-300 focus:ring-brand" /> Training Programs</label>
+        <div className="grid grid-cols-3 gap-x-2 gap-y-1 text-[11px] leading-tight">
+          <div className="flex items-center gap-1"><span>✓</span> Performance Bonus</div>
+          <div className="flex items-center gap-1"><span>✓</span> Paid Leave</div>
+          <div className="flex items-center gap-1"><span>✓</span> Free Lunch/Snacks</div>
+          <div className="flex items-center gap-1"><span>✓</span> Health Insurance</div>
+          <div className="flex items-center gap-1"><span>✓</span> Accident Insurance</div>
+          <div className="flex items-center gap-1"><span>✓</span> Laptop/Work Device</div>
+          <div className="flex items-center gap-1"><span>✓</span> Festival Bonus</div>
+          <div className="flex items-center gap-1"><span>✓</span> Flexible Hours</div>
+          <div className="flex items-center gap-1"><span>✓</span> Training Programs</div>
         </div>
       </div>
 
