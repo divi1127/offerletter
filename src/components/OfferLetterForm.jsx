@@ -139,8 +139,7 @@ const OfferLetterForm = () => {
       </div>
 
       {/* 15. Termination Clause */}
-      <div className="html2pdf__page-break" style={{ pageBreakBefore: 'always', breakBefore: 'page', clear: 'both' }}></div>
-      <div style={{ display: 'inline-block', width: '100%' }} className="avoid-break">
+      <div style={{ display: 'inline-block', width: '100%', marginTop: '0' }} className="avoid-break">
         <h3 className="font-bold text-brand mb-1 text-base">11. Termination</h3>
         <p className="mb-2">Either party may terminate this employment agreement by providing 30 days written notice or salary in lieu of notice. However, the company reserves the right to terminate your employment immediately, without notice or compensation, for the following reasons:</p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 list-disc pl-5">
@@ -194,7 +193,7 @@ const OfferLetterForm = () => {
           We look forward to welcoming you to the <strong>JOD TECH IT SOLUTION</strong> family and wish you a long, rewarding, and successful career with us.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-8 mt-12 signature-section">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-8 mt-8 signature-section">
           {/* Company Signature */}
           <div>
             <p className="mb-12 font-bold text-brand">For JOD TECH IT SOLUTION</p>

@@ -30,10 +30,15 @@
     color: #111827 !important; /* gray-900 hex */
     width: 210mm !important;
     min-width: 210mm !important;
-    padding: 20mm !important;
+    padding: 15mm !important;
     margin: 0 !important;
     position: relative !important;
     overflow: visible !important;
+  }
+
+  /* Remove top margin from the section immediately after the manual page break */
+  .pdf-capture-mode .html2pdf__page-break + .avoid-break {
+    margin-top: 0 !important;
   }
 
   /* Force sections to be unbreakable blocks */
@@ -92,14 +97,9 @@
     break-inside: avoid !important;
   }
 
-  .pdf-capture-mode .html2pdf__page-break {
-    display: block !important;
-    page-break-before: always !important;
-    break-before: page !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
+  .pdf-capture-mode > div > *:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 }
 
