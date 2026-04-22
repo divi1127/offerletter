@@ -2,10 +2,10 @@ import React from 'react';
 
 const OfferLetterForm = () => {
   return (
-    <div className="text-[0.95rem] leading-relaxed text-gray-800 space-y-3">
+    <div className="text-[0.95rem] leading-relaxed text-gray-800 space-y-2">
       
       {/* 2. Employee Address Section */}
-      <div className="mb-4 min-h-[120px]"> {/* Reserved space for address to keep bottom alignment consistent */}
+      <div className="mb-2 min-h-[90px]"> {/* Reserved space for address to keep bottom alignment consistent */}
         <p className="font-bold text-gray-900 uppercase text-[10px] mb-1">To,</p>
         <div className="flex flex-col">
           <input type="text" placeholder="[Employee Name]" className="font-bold text-base border border-gray-300 rounded px-2 py-0.5 outline-none focus:border-brand w-full sm:w-64 transition-colors mb-1" />
@@ -139,8 +139,8 @@ const OfferLetterForm = () => {
       </div>
 
       {/* 15. Termination Clause */}
-      <div className="html2pdf__page-break" style={{ pageBreakBefore: 'always', breakBefore: 'page', height: '0', margin: '0', padding: '0' }}></div>
-      <div style={{ display: 'inline-block', width: '100%', marginTop: '0', paddingTop: '0' }} className="avoid-break">
+      {/* 15. Termination Clause */}
+      <div style={{ display: 'inline-block', width: '100%' }} className="avoid-break">
         <h3 className="font-bold text-brand mb-1 text-base">11. Termination</h3>
         <p className="mb-2">Either party may terminate this employment agreement by providing 30 days written notice or salary in lieu of notice. However, the company reserves the right to terminate your employment immediately, without notice or compensation, for the following reasons:</p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 list-disc pl-5">
@@ -194,7 +194,7 @@ const OfferLetterForm = () => {
           We look forward to welcoming you to the <strong>JOD TECH IT SOLUTION</strong> family and wish you a long, rewarding, and successful career with us.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-8 mt-8 signature-section">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-8 mt-6 signature-section">
           {/* Company Signature */}
           <div>
             <p className="mb-12 font-bold text-brand">For JOD TECH IT SOLUTION</p>
