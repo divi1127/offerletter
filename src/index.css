@@ -91,6 +91,16 @@
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
+
+  .pdf-capture-mode .html2pdf__page-break {
+    display: block !important;
+    page-break-before: always !important;
+    break-before: page !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
 }
 
 @media print {

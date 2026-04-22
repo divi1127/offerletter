@@ -139,6 +139,7 @@ const OfferLetterForm = () => {
       </div>
 
       {/* 15. Termination Clause */}
+      <div className="html2pdf__page-break" style={{ pageBreakBefore: 'always', breakBefore: 'page', clear: 'both' }}></div>
       <div style={{ display: 'inline-block', width: '100%' }} className="avoid-break">
         <h3 className="font-bold text-brand mb-1 text-base">11. Termination</h3>
         <p className="mb-2">Either party may terminate this employment agreement by providing 30 days written notice or salary in lieu of notice. However, the company reserves the right to terminate your employment immediately, without notice or compensation, for the following reasons:</p>
