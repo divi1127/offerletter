@@ -39,7 +39,7 @@ const OfferLetterForm = () => {
           <table className="w-full border-collapse border border-gray-300 my-4 text-sm">
             <thead>
               <tr className="bg-gray-100">
-                <th className="border border-gray-300 p-2 text-left w-1/2">Salary Component</th>
+                <th className="border border-gray-300 p-2 text-left w-[40%]">Salary Component</th>
                 <th className="border border-gray-300 p-2 text-right">Monthly (Rs.)</th>
                 <th className="border border-gray-300 p-2 text-right">Annual (Rs.)</th>
               </tr>

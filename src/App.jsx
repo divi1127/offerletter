@@ -125,7 +125,7 @@ function App() {
           useCORS: true, 
           logging: false, 
           letterRendering: true,
-          windowWidth: 1024 
+          windowWidth: 794 
         },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { mode: ['css', 'legacy'], avoid: ['h3', 'table', '.avoid-break', '.signature-section'] }
