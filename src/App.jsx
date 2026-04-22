@@ -105,6 +105,17 @@ function App() {
         replacements.push({ parent, div: box, input: chk });
       });
 
+      // Add mobile-specific page breaks ONLY if on a small screen
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        const terminationSection = element.querySelector('.section-termination');
+        if (terminationSection) {
+          const breakDiv = document.createElement('div');
+          breakDiv.className = 'html2pdf__page-break';
+          terminationSection.parentNode.insertBefore(breakDiv, terminationSection);
+        }
+      }
+
       const opt = {
         margin: [10, 10],
         filename: `JOD_TECH_Offer_Letter.pdf`,
@@ -114,7 +125,7 @@ function App() {
           useCORS: true, 
           logging: false, 
           letterRendering: true,
-          windowWidth: 1024 // Force desktop-like width to ensure grids (cols-3) render correctly
+          windowWidth: 1024 
         },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { mode: ['css', 'legacy'], avoid: ['h3', 'table', '.avoid-break', '.signature-section'] }
