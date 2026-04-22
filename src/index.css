@@ -32,6 +32,16 @@
     min-width: 210mm !important;
     padding: 20mm !important;
     margin: 0 !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  /* Force sections to be unbreakable blocks */
+  .pdf-capture-mode .avoid-break {
+    display: inline-block !important;
+    width: 100% !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
   .pdf-capture-mode * {
