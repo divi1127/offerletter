@@ -5,7 +5,7 @@ const OfferLetterForm = () => {
     <div className="text-[0.95rem] leading-relaxed text-gray-800 space-y-2">
       
       {/* 2. Employee Address Section */}
-      <div className="mb-2 min-h-[90px]"> {/* Reserved space for address to keep bottom alignment consistent */}
+      <div className="mb-2 min-h-[70px]"> {/* Reserved space for address to keep bottom alignment consistent */}
         <p className="font-bold text-gray-900 uppercase text-[10px] mb-1">To,</p>
         <div className="flex flex-col">
           <input type="text" placeholder="[Employee Name]" className="font-bold text-base border border-gray-300 rounded px-2 py-0.5 outline-none focus:border-brand w-full sm:w-64 transition-colors mb-1" />
@@ -140,18 +140,24 @@ const OfferLetterForm = () => {
 
       
       {/* 15. Termination Clause */}
-      <div style={{ display: 'inline-block', width: '100%' }} className="avoid-break section-termination">
-        <h3 className="font-bold text-brand mb-1 text-base">11. Termination</h3>
-        <p className="mb-2">Either party may terminate this employment agreement by providing 30 days written notice or salary in lieu of notice. However, the company reserves the right to terminate your employment immediately, without notice or compensation, for the following reasons:</p>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 list-disc pl-5">
-          <li>Misconduct or Policy Violations</li>
-          <li>Poor Performance</li>
-          <li>Submission of Fake Documents</li>
-          <li>Breach of Confidentiality</li>
-          <li>Fraudulent Activities</li>
-          <li>Background Verification Failure</li>
-        </ul>
-      </div>
+      <table className="w-full border-none border-collapse m-0 p-0 avoid-break section-termination">
+        <tbody>
+          <tr>
+            <td className="border-none p-0">
+              <h3 className="font-bold text-brand mb-1 text-base">11. Termination</h3>
+              <p className="mb-2">Either party may terminate this employment agreement by providing 30 days written notice or salary in lieu of notice. However, the company reserves the right to terminate your employment immediately, without notice or compensation, for the following reasons:</p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 list-disc pl-5">
+                <li>Misconduct or Policy Violations</li>
+                <li>Poor Performance</li>
+                <li>Submission of Fake Documents</li>
+                <li>Breach of Confidentiality</li>
+                <li>Fraudulent Activities</li>
+                <li>Background Verification Failure</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
       {/* 16. Non-Solicitation */}
       <div className="avoid-break section-solicitation">

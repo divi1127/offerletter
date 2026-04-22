@@ -105,17 +105,6 @@ function App() {
         replacements.push({ parent, div: box, input: chk });
       });
 
-      // Add mobile-specific page breaks ONLY if on a small screen
-      const isMobile = window.innerWidth < 768;
-      if (isMobile) {
-        const solicitationSection = element.querySelector('.section-solicitation');
-        if (solicitationSection) {
-          const breakDiv = document.createElement('div');
-          breakDiv.className = 'html2pdf__page-break';
-          solicitationSection.parentNode.insertBefore(breakDiv, solicitationSection);
-        }
-      }
-
       const opt = {
         margin: [10, 10],
         filename: `JOD_TECH_Offer_Letter.pdf`,
