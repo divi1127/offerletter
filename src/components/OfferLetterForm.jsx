@@ -140,7 +140,7 @@ const OfferLetterForm = () => {
 
       
       {/* 15. Termination Clause */}
-      <table className="w-full border-none border-collapse m-0 p-0 avoid-break section-termination">
+      <table className="w-full border-none border-collapse m-0 p-0 avoid-break section-termination" style={{ marginTop: '0', paddingTop: '0' }}>
         <tbody>
           <tr>
             <td className="border-none p-0">

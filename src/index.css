@@ -37,8 +37,11 @@
   }
 
   /* Remove top margin from the section immediately after the manual page break */
-  .pdf-capture-mode .html2pdf__page-break + .avoid-break {
+  .pdf-capture-mode .html2pdf__page-break + .avoid-break,
+  .pdf-capture-mode .html2pdf__page-break + table,
+  .pdf-capture-mode .html2pdf__page-break + div {
     margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
   /* Force sections to be unbreakable blocks */
