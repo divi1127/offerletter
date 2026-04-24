@@ -2,19 +2,19 @@ import { useState, useRef } from "react";
 import logo from "./assets/logo.jpg";
 
 const defaultForm = {
-  employeeName: "Arun Kumar S",
-  employeeAddress: "12, Gandhi Nagar, 2nd Street\nMadurai - 625020\nTamil Nadu",
-  jobRole: "Software Developer",
-  department: "Engineering",
-  annualCTC: "360000",
-  dateOfJoining: "2024-08-01",
-  hrManagerName: "Priya Devi R",
-  refNo: "JOD/527/07/2024",
-  date: "2024-07-05",
-  basic: "15000",
-  hra: "6000",
-  otherAllowances: "4000",
-  employerPF: "5000",
+  employeeName: "",
+  employeeAddress: "",
+  jobRole: "",
+  department: "",
+  annualCTC: "",
+  dateOfJoining: "",
+  hrManagerName: "",
+  refNo: "JOD/001/04/2026",
+  date: "2026-04-24",
+  basic: "",
+  hra: "",
+  otherAllowances: "",
+  employerPF: "",
 };
 
 const benefits = [
