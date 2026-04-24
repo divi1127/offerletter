@@ -27,13 +27,24 @@
   /* PDF Capture Mode Overrides to fix html2canvas oklch error */
   .pdf-capture-mode {
     background-color: #ffffff !important;
-    color: #111827 !important; /* gray-900 hex */
-    width: 100% !important;
-    min-width: 0 !important;
-    padding: 0 !important;
+    color: #111827 !important;
+    width: 800px !important; /* Perfect fit for A4 (210mm) */
+    min-width: 800px !important;
+    max-width: 800px !important;
+    padding: 0 !important; /* Margin is now handled by html2pdf settings */
     margin: 0 !important;
     position: relative !important;
     overflow: visible !important;
+  }
+
+  .force-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+    display: block !important;
+    width: 100% !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   /* Remove top margin from the section immediately after the manual page break */
@@ -46,10 +57,11 @@
 
   /* Force sections to be unbreakable blocks */
   .pdf-capture-mode .avoid-break {
-    display: inline-block !important;
+    display: inline-block !important; /* Most reliable for html2canvas */
     width: 100% !important;
     page-break-inside: avoid !important;
-    break-inside: avoid !important;
+    break-inside: avoid-page !important;
+    position: relative !important;
   }
 
   .pdf-capture-mode * {
@@ -98,6 +110,26 @@
   .pdf-capture-mode h3 {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+  }
+
+  /* Prevent headings from being separated from content */
+  .pdf-capture-mode h3 + p,
+  .pdf-capture-mode p + ul {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+  }
+
+  /* Force desktop-like grids in PDF regardless of screen size */
+  .pdf-capture-mode .signature-section {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 2.5rem !important;
+  }
+
+  .pdf-capture-mode .additional-benefits-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
   }
 
   .pdf-capture-mode > div > *:last-child {
