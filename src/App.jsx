@@ -1,4 +1,17 @@
 import { useState, useRef } from "react";
+import { 
+  FileText, 
+  User, 
+  IndianRupee, 
+  PenTool, 
+  Download, 
+  Eye, 
+  Briefcase, 
+  CheckCircle, 
+  Printer,
+  FileEdit,
+  Layout
+} from "lucide-react";
 import logo from "./assets/logo.jpg";
 
 const defaultForm = {
@@ -112,8 +125,11 @@ export default function OfferLetterGenerator() {
           box-shadow: 0 2px 8px rgba(245,158,11,0.4);
         }
         .btn-download:hover { background: #d97706; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(245,158,11,0.5); }
+        
+        .topbar-brand-icon { color: #f59e0b; margin-right: 4px; }
 
         .tabs { display: flex; background: white; border-bottom: 2px solid #e2e8f0; }
+        .bottom-nav { display: none; }
         .tab {
           flex: 1; padding: 14px; text-align: center; font-weight: 600; font-size: 13px;
           cursor: pointer; color: #64748b; border-bottom: 3px solid transparent;
@@ -136,7 +152,9 @@ export default function OfferLetterGenerator() {
           font-size: 11px; font-weight: 700; text-transform: uppercase;
           letter-spacing: 1px; color: #059669; margin-bottom: 12px;
           padding-bottom: 6px; border-bottom: 2px solid #d1fae5;
+          display: flex; align-items: center; gap: 8px;
         }
+        .form-section-title svg { color: #10b981; }
         .form-row { margin-bottom: 14px; }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
@@ -256,12 +274,30 @@ export default function OfferLetterGenerator() {
           .preview-panel, .form-panel { max-height: unset; }
           .topbar { padding: 12px 16px; }
           .topbar-title { font-size: 15px; }
+
+          .tabs { display: none; }
+          .bottom-nav {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: white; border-top: 1px solid #e2e8f0;
+            display: flex; justify-content: space-around;
+            padding: 8px 12px 24px; z-index: 1000;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+          }
+          .nav-item {
+            display: flex; flex-direction: column; align-items: center;
+            gap: 4px; color: #64748b; font-size: 10px; font-weight: 600;
+            background: none; border: none; padding: 4px 12px;
+          }
+          .nav-item.active { color: #059669; }
+          .nav-item-icon { width: 22px; height: 22px; }
+          
+          .main-content { padding-bottom: 70px; }
         }
 
         /* PRINT */
         @media print {
           body { background: white !important; }
-          .topbar, .tabs, .form-panel, .preview-panel > *:not(.preview-wrapper) { display: none !important; }
+          .topbar, .tabs, .form-panel, .bottom-nav, .preview-panel > *:not(.preview-wrapper) { display: none !important; }
           .app-shell { display: block; }
           .main-content, .preview-panel, .preview-wrapper, .letter-doc { 
             display: block !important; 
@@ -272,19 +308,20 @@ export default function OfferLetterGenerator() {
           }
           .preview-panel { padding: 0; background: white; }
           .preview-wrapper { max-width: 100%; }
-          .letter-doc { box-shadow: none; padding: 40px 56px; min-height: unset; }
-          .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+          .letter-doc { box-shadow: none; padding: 30px 48px; min-height: unset; }
+          .benefits-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+          .benefit-chip { padding: 6px 8px; }
           .print-page-break { display: block; page-break-before: always; }
           .signature-block { 
             display: flex !important; 
             flex-direction: row !important; 
             justify-content: space-between !important; 
-            margin-top: 30px !important; 
+            margin-top: 20px !important; 
             page-break-inside: avoid !important;
           }
           .sig-box { flex: 1 !important; }
-          .footer-bar { margin-top: 20px !important; }
-          @page { margin: 1cm; size: A4; }
+          .footer-bar { margin-top: 15px !important; page-break-inside: avoid !important; }
+          @page { margin: 0.8cm; size: A4; }
         }
       `}</style>
 
@@ -295,7 +332,10 @@ export default function OfferLetterGenerator() {
             <img src={logo} alt="JOD Logo" className="topbar-logo" />
             <div>
               <div className="topbar-title">Offer Letter Generator</div>
-              <div className="topbar-sub">JOD TECH IT SOLUTION • Professional HR Tool</div>
+              <div className="topbar-sub" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <Briefcase size={12} className="topbar-brand-icon" />
+                JOD TECH IT SOLUTION • Professional HR Tool
+              </div>
             </div>
           </div>
           <button className="btn-download" onClick={handleDownloadPDF}>
@@ -308,13 +348,15 @@ export default function OfferLetterGenerator() {
           </button>
         </div>
 
-        {/* TABS (mobile) */}
+        {/* TABS (desktop/tablet header) */}
         <div className="tabs">
           <div className={`tab ${activeTab === "form" ? "active" : ""}`} onClick={() => setActiveTab("form")}>
-            ✏️ Edit Details
+            <FileEdit size={16} style={{ marginBottom: '-2px', marginRight: '6px' }} />
+            Edit Details
           </div>
           <div className={`tab ${activeTab === "preview" ? "active" : ""}`} onClick={() => setActiveTab("preview")}>
-            👁 Live Preview
+            <Eye size={16} style={{ marginBottom: '-2px', marginRight: '6px' }} />
+            Live Preview
           </div>
         </div>
 
@@ -323,7 +365,10 @@ export default function OfferLetterGenerator() {
           <div className={`form-panel ${activeTab === "form" ? "show" : ""}`} style={{ display: activeTab === "form" ? "block" : undefined }}>
 
             <div className="form-section">
-              <div className="form-section-title">📋 Document Info</div>
+              <div className="form-section-title">
+                <FileText size={16} />
+                Document Info
+              </div>
               <div className="form-row">
                 <label className={label}>Reference Number</label>
                 <input className={inp} name="refNo" value={form.refNo} onChange={handleChange} />
@@ -335,7 +380,10 @@ export default function OfferLetterGenerator() {
             </div>
 
             <div className="form-section">
-              <div className="form-section-title">👤 Employee Details</div>
+              <div className="form-section-title">
+                <User size={16} />
+                Employee Details
+              </div>
               <div className="form-row">
                 <label className={label}>Full Name</label>
                 <input className={inp} name="employeeName" value={form.employeeName} onChange={handleChange} placeholder="Employee Full Name" />
@@ -359,7 +407,10 @@ export default function OfferLetterGenerator() {
             </div>
 
             <div className="form-section">
-              <div className="form-section-title">💰 Salary Structure (Monthly ₹)</div>
+              <div className="form-section-title">
+                <IndianRupee size={16} />
+                Salary Structure (Monthly ₹)
+              </div>
               <div className="form-grid">
                 <div className="form-row">
                   <label className={label}>Basic Salary</label>
@@ -386,7 +437,10 @@ export default function OfferLetterGenerator() {
             </div>
 
             <div className="form-section">
-              <div className="form-section-title">🖊 Authorized Signatory</div>
+              <div className="form-section-title">
+                <PenTool size={16} />
+                Authorized Signatory
+              </div>
               <div className="form-row">
                 <label className={label}>HR Manager Name</label>
                 <input className={inp} name="hrManagerName" value={form.hrManagerName} onChange={handleChange} />
@@ -512,7 +566,7 @@ export default function OfferLetterGenerator() {
                 <div className="benefits-grid">
                   {benefits.map(b => (
                     <div className="benefit-chip" key={b}>
-                      <span>✓</span>{b}
+                      <CheckCircle size={14} /> {b}
                     </div>
                   ))}
                 </div>
@@ -543,6 +597,32 @@ export default function OfferLetterGenerator() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* MOBILE BOTTOM NAV */}
+        <div className="bottom-nav">
+          <button 
+            className={`nav-item ${activeTab === "form" ? "active" : ""}`} 
+            onClick={() => setActiveTab("form")}
+          >
+            <FileEdit className="nav-item-icon" />
+            <span>Edit</span>
+          </button>
+          <button 
+            className={`nav-item ${activeTab === "preview" ? "active" : ""}`} 
+            onClick={() => setActiveTab("preview")}
+          >
+            <Eye className="nav-item-icon" />
+            <span>Preview</span>
+          </button>
+          <button className="nav-item" onClick={() => window.print()}>
+            <Printer className="nav-item-icon" />
+            <span>Print</span>
+          </button>
+          <button className="nav-item" onClick={handleDownloadPDF} style={{ color: '#f59e0b' }}>
+            <Download className="nav-item-icon" />
+            <span>PDF</span>
+          </button>
         </div>
       </div>
     </>
